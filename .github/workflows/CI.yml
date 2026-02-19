@@ -20,10 +20,13 @@ jobs:
           node-version: '18'
 
       - name: Install dependencies
+        working-directory: ./app   # 👈 change this to the folder where package.json lives
         run: npm install
 
       - name: Run tests
+        working-directory: ./app
         run: npm test
 
       - name: Build project
+        working-directory: ./app
         run: npm run build
